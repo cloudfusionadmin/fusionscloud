@@ -3,7 +3,7 @@
 import { env } from '@/env.mjs';
 
 export async function verifyCaptchaAction(token: string) {
-  const response = await fetch(`https://www.google.com/recaptcha/enterprise.js?render=${env.RECAPTCHA_SECRET_KEY}&response=${token}`, {
+  const response = await fetch(`https://www.google.com/recaptcha/api/siteverify?secret=${env.RECAPTCHA_SECRET_KEY}&response=${token}`, {
     method: 'POST'
   });
 

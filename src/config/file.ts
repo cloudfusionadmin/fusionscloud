@@ -2,9 +2,9 @@ export const KB = 1000;
 export const MB = KB * 1000;
 export const GB = MB * 1000;
 
-export const MAX_IMAGE_SIZE = 10 * MB;
+export const MAX_IMAGE_SIZE = 5 * MB;
 
-export const MAX_FILE_SIZE = 10 * GB;
+export const MAX_FILE_SIZE = 4 * GB;
 
 export const IMAGE_TYPES = [
   'image/jpeg',
