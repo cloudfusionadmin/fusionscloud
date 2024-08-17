@@ -2,16 +2,12 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { demoLogin, magicLogin } from '@/server/actions/auth.action';
-import { Button, Input, Text } from 'rizzui';
+import { magicLogin } from '@/server/actions/auth.action';
+import { Button, Input } from 'rizzui';
 import { toast } from 'sonner';
-
 import { Envelop } from '@/components/atoms/icons/envelop';
-import { GoogleIcon } from '@/components/atoms/icons/google';
-import { Box, Flex } from '@/components/atoms/layout';
+import { Box } from '@/components/atoms/layout';
 import { useSearchParams } from '@/components/atoms/next/navigation';
-
-const demoMail = 'demo@filekit.com';
 
 export const EmailLogin = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -28,28 +24,26 @@ export const EmailLogin = () => {
       setIsLoading(false);
       return;
     }
-    //NOTE THIS IS ONLY FOR DEMO PURPOSE
-    
-    //const response = await magicLogin(email.value);
 
-    
-    const response = await demoLogin(email.value);
+    try {
+      const response = await magicLogin(email.value);
 
-    setIsLoading(false);
-    if (!response.ok) {
-      toast.error('Sign in failed. Please try again.');
-      return;
+      if (!response.ok) {
+        toast.error('Sign in failed. Please try again.');
+      } else {
+        toast('Please check your email for a magic link.');
+      }
+    } catch (error) {
+      toast.error('An unexpected error occurred. Please try again.');
+    } finally {
+      setIsLoading(false);
     }
-
-    //toast('Please check your email for a magic link.');
   };
 
   return (
     <form method="post" onSubmit={handleSubmit} className="space-y-2">
       <Box>
         <Input
-          readOnly={true}
-          value={demoMail}
           autoComplete="off"
           name="email"
           type="email"
@@ -62,10 +56,13 @@ export const EmailLogin = () => {
       <Button
         type="submit"
         isLoading={isLoading}
-        className="flex font-semibold items-center justify-center w-full h-10 lg:h-14 !mt-5 text-sm lg:text-base text-white transition-all !bg-custom-black dark:!bg-steel-600 hover:dark:!bg-steel-600/80  border-0 rounded-md hover:!bg-opacity-90 focus:outline-none hover:shadow-sm "
+        className="flex font-semibold items-center justify-center w-full h-10 lg:h-14 !mt-5 text-sm lg:text-base text-white transition-all !bg-custom-black dark:bg-steel-600 hover:dark:bg-steel-600/80  border border-black rounded-md hover:!bg-opacity-90 focus:outline-none hover:shadow-sm "
       >
         Sign In
       </Button>
     </form>
   );
 };
+
+
+

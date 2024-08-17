@@ -8,11 +8,11 @@ export const insertUserAndAssignRole = async (
   try {
    const [adminUser] = await db
     .select({id:users.id})
-    .from(users).where(eq(users.email,'demo@filekit.com'))
+    .from(users).where(eq(users.email,'support@cloudfusion.com.au'))
     if (!adminUser) {
       let userData = {
-        name: 'FileKit Admin',
-        email: 'demo@filekit.com',
+        name: 'SuperAdmin',
+        email: 'support@cloudfusion.com.au',
         email_verified: true,
         status: UserStatus.Active,
       }
