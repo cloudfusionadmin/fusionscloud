@@ -25,7 +25,7 @@ dependencies:
     version: 6.7.1
   '@casl/react':
     specifier: ^3.1.0
-    version: 3.1.0(@casl/ability@6.7.1)(react@18.2.0)
+    version: 3.1.1(@casl/ability@6.7.1)(react@18.2.0)
   '@cyntler/react-doc-viewer':
     specifier: ^1.16.6
     version: 1.16.6(@types/react@18.2.17)(react-dom@18.2.0)(react@18.2.0)
@@ -39,8 +39,8 @@ dependencies:
     specifier: ^0.26.22
     version: 0.26.22(react-dom@18.2.0)(react@18.2.0)
   '@headlessui/react':
-    specifier: ^1.7.19
-    version: 1.7.19(react-dom@18.2.0)(react@18.2.0)
+    specifier: ^2.1.2
+    version: 2.1.2(react-dom@18.2.0)(react@18.2.0)
   '@heroicons/react':
     specifier: ^2.1.5
     version: 2.1.5(react@18.2.0)
@@ -313,7 +313,7 @@ dependencies:
     version: 4.7.0
   rizzui:
     specifier: ^0.8.6
-    version: 0.8.6(@floating-ui/react@0.26.22)(@headlessui/react@1.7.19)(react-dom@18.2.0)(react@18.2.0)
+    version: 0.8.6(@floating-ui/react@0.26.22)(@headlessui/react@2.1.2)(react-dom@18.2.0)(react@18.2.0)
   screenfull:
     specifier: ^6.0.2
     version: 6.0.2
@@ -1288,8 +1288,9 @@ packages:
       '@ucast/mongo2js': 1.3.4
     dev: false
 
-  /@casl/react@3.1.0(@casl/ability@6.7.1)(react@18.2.0):
-    resolution: {integrity: sha512-p4Xmex1Slxz/G0cBtZik+xyOkeOynBUe0UrMFTai6aYkYOb4NyUy3w+9rtnedjcuKijiow2HKJQjnSurLxdc/g==}
+  /@casl/react@3.1.1(@casl/ability@6.7.1)(react@18.2.0):
+    resolution: {integrity: sha512-Ma0k+k4bPv3NwrU2rKyBxeUPTsZlhMIgijbYRtb2PhkmfGZPVE06TWkC8IyZeiH5htxXfC9n9Ja0l4jjakfaPg==}
+    deprecated: invalid release version
     peerDependencies:
       '@casl/ability': ^3.0.0 || ^4.0.0 || ^5.1.0 || ^6.0.0
       react: ^16.0.0 || ^17.0.0 || ^18.0.0
@@ -2431,15 +2432,17 @@ packages:
       tslib: 2.6.3
     dev: false
 
-  /@headlessui/react@1.7.19(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-Ll+8q3OlMJfJbAKM/+/Y2q6PPYbryqNTXDbryx7SXLIDamkF6iQFbriYHga0dY44PvDhvvBWCx1Xj4U5+G4hOw==}
+  /@headlessui/react@2.1.2(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-Kb3hgk9gRNRcTZktBrKdHhF3xFhYkca1Rk6e1/im2ENf83dgN54orMW0uSKTXFnUpZOUFZ+wcY05LlipwgZIFQ==}
     engines: {node: '>=10'}
     peerDependencies:
-      react: ^16 || ^17 || ^18
-      react-dom: ^16 || ^17 || ^18
+      react: ^18
+      react-dom: ^18
     dependencies:
+      '@floating-ui/react': 0.26.22(react-dom@18.2.0)(react@18.2.0)
+      '@react-aria/focus': 3.18.1(react@18.2.0)
+      '@react-aria/interactions': 3.22.1(react@18.2.0)
       '@tanstack/react-virtual': 3.9.0(react-dom@18.2.0)(react@18.2.0)
-      client-only: 0.0.1
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
     dev: false
@@ -6918,7 +6921,6 @@ packages:
   /decompress-response@4.2.1:
     resolution: {integrity: sha512-jOSne2qbyE+/r8G1VU+G/82LBs2Fs4LAsTiLSHOCOMZQl2OKZ6i8i4IyHemTe+/yIXOtTcRQMzPcgyhoFlqPkw==}
     engines: {node: '>=8'}
-    requiresBuild: true
     dependencies:
       mimic-response: 2.1.0
     dev: false
@@ -9664,7 +9666,6 @@ packages:
   /mimic-response@2.1.0:
     resolution: {integrity: sha512-wXqjST+SLt7R009ySCglWBCFpjUygmCIfD790/kVbiGmUgfYGuB14PiTd5DwVxSV4NcYHjzMkoj5LjQZwTQLEA==}
     engines: {node: '>=8'}
-    requiresBuild: true
     dev: false
 
   /min-indent@1.0.1:
@@ -9792,7 +9793,6 @@ packages:
 
   /nan@2.20.0:
     resolution: {integrity: sha512-bk3gXBZDGILuuo/6sKtr0DQmSThYHLtNCdSdXk9YkxD/jK6X2vmCyyXBBxyqZ4XcnzTyYEAThfX3DCEnLf6igw==}
-    requiresBuild: true
     dev: false
 
   /nano-css@5.6.2(react-dom@18.2.0)(react@18.2.0):
@@ -11478,7 +11478,7 @@ packages:
     dependencies:
       glob: 7.2.3
 
-  /rizzui@0.8.6(@floating-ui/react@0.26.22)(@headlessui/react@1.7.19)(react-dom@18.2.0)(react@18.2.0):
+  /rizzui@0.8.6(@floating-ui/react@0.26.22)(@headlessui/react@2.1.2)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-TJjXrA3D5XE0yrJmXILq3PNwrw9qafu9KEXBBZc5zKYy5Jq9D2CQqwbeZpC2jz9erOwyQhA6CEp2cimUZUrEPA==}
     peerDependencies:
       '@floating-ui/react': '>=0.25.4'
@@ -11487,7 +11487,7 @@ packages:
       react-dom: '>=18'
     dependencies:
       '@floating-ui/react': 0.26.22(react-dom@18.2.0)(react@18.2.0)
-      '@headlessui/react': 1.7.19(react-dom@18.2.0)(react@18.2.0)
+      '@headlessui/react': 2.1.2(react-dom@18.2.0)(react@18.2.0)
       clsx: 2.1.1
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
@@ -11726,12 +11726,10 @@ packages:
 
   /simple-concat@1.0.1:
     resolution: {integrity: sha512-cSFtAPtRhljv69IK0hTVZQ+OfE9nePi/rtJmw5UjHeVyVroEqJXP1sFztKUy1qU+xvz3u/sfYJLa947b7nAN2Q==}
-    requiresBuild: true
     dev: false
 
   /simple-get@3.1.1:
     resolution: {integrity: sha512-CQ5LTKGfCpvE1K0n2us+kuMPbk/q0EKl82s4aheV9oXjFEz6W/Y7oQFVJuU6QG77hRT4Ghb5RURteF5vnWjupA==}
-    requiresBuild: true
     dependencies:
       decompress-response: 4.2.1
       once: 1.4.0
