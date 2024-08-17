@@ -6,6 +6,7 @@ import { db } from './db';
 import { sessions, users, UserStatus } from './db/schema';
 import { env } from './env.mjs';
 
+// Assuming sessions and users are correctly defined in ./db/schema
 const adapter = new DrizzlePostgreSQLAdapter(db, sessions, users);
 
 export const lucia = new Lucia(adapter, {
