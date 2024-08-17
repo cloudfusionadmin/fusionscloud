@@ -347,9 +347,6 @@ dependencies:
   type-fest:
     specifier: ^4.25.0
     version: 4.25.0
-  typescript:
-    specifier: 5.1.6
-    version: 5.1.6
   uuid:
     specifier: ^9.0.1
     version: 9.0.1
@@ -388,6 +385,9 @@ devDependencies:
   '@types/cookies':
     specifier: ^0.7.10
     version: 0.7.10
+  '@types/eslint':
+    specifier: ^9.6.0
+    version: 9.6.0
   '@types/file-saver':
     specifier: ^2.0.7
     version: 2.0.7
@@ -439,6 +439,9 @@ devDependencies:
   stripe-cli:
     specifier: ^0.1.0
     version: 0.1.0
+  typescript:
+    specifier: 5.1.6
+    version: 5.1.6
 
 packages:
 
